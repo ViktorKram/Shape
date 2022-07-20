@@ -1,17 +1,24 @@
 package shape
 
-import "math"
+import (
+	"errors"
+	"math"
+)
 
 type circle struct {
 	radius float64
 }
 
-func (c circle) NewCircle(radius float64) circle {
+func (c circle) GetRadius() float64 {
+	return c.radius
+}
+
+func (c circle) NewCircle(radius float64) (*circle, error) {
 	if radius <= 0 {
-		panic("radius is less or equals zero")
+		return nil, errors.New("radius is less or equals zero.")
 	}
 
-	return circle{radius}
+	return &circle{radius}, nil
 }
 
 func (c circle) GetArea() float64 {
