@@ -13,7 +13,7 @@ func (c circle) GetRadius() float64 {
 	return c.radius
 }
 
-func (c circle) NewCircle(radius float64) (*circle, error) {
+func NewCircle(radius float64) (*circle, error) {
 	if radius <= 0 {
 		return nil, errors.New("radius is less or equals zero.")
 	}

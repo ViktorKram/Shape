@@ -23,7 +23,7 @@ func (t triangle) GetSideC() float64 {
 	return t.sideC
 }
 
-func (t triangle) NewTriangle(sideA, sideB, sideC float64) (*triangle, error) {
+func NewTriangle(sideA, sideB, sideC float64) (*triangle, error) {
 	if sideA <= 0 || sideB <= 0 || sideC <= 0 {
 		return nil, errors.New("side is less or equals zero.")
 	}
