@@ -30,6 +30,15 @@ func TestNewTriangle_sideEqualsOrLessThanZero_returnsError(t *testing.T) {
 		{sideA: 1,
 			sideB: 2,
 			sideC: 0},
+		{sideA: -1,
+			sideB: 1,
+			sideC: 2},
+		{sideA: 1,
+			sideB: -1,
+			sideC: 2},
+		{sideA: 1,
+			sideB: 2,
+			sideC: -1},
 	}
 
 	for _, tCase := range cases {
